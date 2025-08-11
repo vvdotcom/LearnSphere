@@ -245,9 +245,6 @@ IMPORTANT RULES:
    * Generate a personalized learning path for a given topic
    */
   async generateLearningPath(topic: string, language:string): Promise<LearningPath> {
-    if (!import.meta.env.VITE_GEMINI_API_KEY) {
-      throw new Error('Gemini API key not configured. Please add VITE_GEMINI_API_KEY to your environment variables.');
-    }
 
     try {
       console.log(`Generating learning path for: ${topic}`);
@@ -301,9 +298,7 @@ IMPORTANT RULES:
    * Generate detailed learning material for a specific step
    */
   async generateLearningMaterial(topic: string, stepTitle: string, stepDescription: string, keyTopics: string[],language:string): Promise<LearningMaterial> {
-    if (!import.meta.env.VITE_GEMINI_API_KEY) {
-      throw new Error('Gemini API key not configured. Please add VITE_GEMINI_API_KEY to your environment variables.');
-    }
+
 
     try {
       console.log(`Generating learning material for: ${topic} - ${stepTitle}`);
@@ -354,9 +349,6 @@ IMPORTANT RULES:
    * Generate quiz questions for a specific learning step
    */
   async generateQuiz(topic: string, stepTitle: string, language:string): Promise<QuizQuestion[]> {
-    // if (!import.meta.env.VITE_GEMINI_API_KEY) {
-    //   throw new Error('Gemini API key not configured. Please add VITE_GEMINI_API_KEY to your environment variables.');
-    // }
 
     try {
       console.log(`Generating quiz for: ${topic} - ${stepTitle}`);

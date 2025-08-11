@@ -261,9 +261,7 @@ CRITICAL REQUIREMENTS:
     settings: ExamSettings,
     language : string
   ): Promise<GeneratedExam> {
-    if (!import.meta.env.VITE_GEMINI_API_KEY) {
-      throw new Error('Gemini API key not configured. Please add VITE_GEMINI_API_KEY to your environment variables.');
-    }
+  
 
     if (!description.trim() && files.length === 0) {
       throw new Error('Please provide either an exam description or upload reference materials.');

@@ -103,9 +103,6 @@ IMPORTANT RULES:
    * Analyze uploaded files and extract math problems
    */
   async analyzeMathProblems(files: File[], language: string, subject:string): Promise<MathProblem[]> {
-    if (!import.meta.env.VITE_GEMINI_API_KEY) {
-      throw new Error('Gemini API key not configured. Please add VITE_GEMINI_API_KEY to your environment variables.');
-    }
 
     const allProblems: MathProblem[] = [];
 
